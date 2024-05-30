@@ -1,0 +1,38 @@
+//WAC to write and read content into a file.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() 
+{
+    FILE *fp;
+    char content[1000];
+
+    fp=fopen("sample.txt","w");
+    if(fp==NULL) 
+    {
+        printf("File Error.");
+        exit(1);
+    }
+    
+    printf("Enter content of the file:\n");
+    fgets(content,sizeof(content),stdin);
+    fprintf(fp,"%s",content);
+    fclose(fp);
+    
+    fp=fopen("sample.txt","r");
+    if(fp==NULL) 
+    {
+        printf("File Error.");
+        exit(1);
+    }
+    
+    printf("Content of the file:\n");
+    while((fgets(content,sizeof(content),fp))!=NULL)
+    {
+        printf("%s",content);
+    }
+    fclose(fp);
+    
+    return 0;
+}
