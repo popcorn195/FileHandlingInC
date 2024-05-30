@@ -74,7 +74,7 @@ int main()
     }
     
     printf("\n\nContent of the file:\n");
-    while((int)(ch=fgetc(fp))!=EOF)
+    while((ch=fgetc(fp))!=EOF)
     {
         printf("%c",ch);
     }
