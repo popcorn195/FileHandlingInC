@@ -1,4 +1,4 @@
-//WAC to store 'n' employees information in a file 
+//WAC to store 'n' employees information in a file.
 
 #include <stdio.h> 
 
