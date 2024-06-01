@@ -1,12 +1,20 @@
 //WAC to store 'n' employees information in a file 
 
-#include <stdio.h>  
+#include <stdio.h> 
+
+typedef struct employees
+{
+    int id;  
+    char name[30];  
+    float salary;
+}emp;
+
 void main()  
 {  
+    emp E[100];
     FILE *fptr;  
-    int id,n,i;  
-    char name[30];  
-    float salary;  
+    int n,i;  
+     
     printf("Enter number of emplyees: ");
     scanf("%d",&n);
     fptr = fopen("emp.txt", "w+");/*  open for writing */  
@@ -20,12 +28,12 @@ void main()
     {
         printf("\nEmployee %d:",i+1);
         printf("\nID: ");  
-        scanf("%d", &id);  
+        scanf("%d", &E[i].id);  
         printf("Name: ");  
-        scanf("%s", name);  
+        scanf("%s", E[i].name);  
         printf("salary: ");  
-        scanf("%f", &salary);  
-        fprintf(fptr, "Employee: %d\nId: %d\nName: %s\nSalary: %.2f\n\n",i+1,id,name, salary);  
+        scanf("%f", &E[i].salary);  
+        fprintf(fptr, "Employee: %d\nId: %d\nName: %s\nSalary: %.2f\n\n",i+1,E[i].id,E[i].name, E[i].salary);  
     }
     fclose(fptr);
     
