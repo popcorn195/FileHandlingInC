@@ -45,5 +45,11 @@ void main()
     {  
         printf("%s ",content);
     }  
+        /*or use:
+            while (fgets(content, 100, fptr) != NULL) 
+            {
+                printf("%s", content);
+            }
+        */
     fclose(fptr);  
 }  
