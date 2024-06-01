@@ -1,0 +1,41 @@
+//WAC to store 'n' employees information in a file 
+
+#include <stdio.h>  
+void main()  
+{  
+    FILE *fptr;  
+    int id,n,i;  
+    char name[30];  
+    float salary;  
+    printf("Enter number of emplyees: ");
+    scanf("%d",&n);
+    fptr = fopen("emp.txt", "w+");/*  open for writing */  
+    if (fptr == NULL)  
+    {  
+        printf("\nFile does not exists \n");  
+        return;  
+    }
+    printf("\nEnter emplyee information: \n");
+    for(i=0;i<n;i++)
+    {
+        printf("\nEmployee %d:",i+1);
+        printf("\nID: ");  
+        scanf("%d", &id);  
+        printf("Name: ");  
+        scanf("%s", name);  
+        printf("salary: ");  
+        scanf("%f", &salary);  
+        fprintf(fptr, "Employee: %d\nId: %d\nName: %s\nSalary: %.2f\n\n",i+1,id,name, salary);  
+    }
+    fclose(fptr);
+    
+    printf("\nThe content of file is:\n");
+    char content[255];//creating char array to store data of file  
+    fptr = fopen("emp.txt", "r"); 
+    
+    while(fscanf(fptr, "%s", content)!=EOF)
+    {  
+        printf("%s ",content);
+    }  
+    fclose(fptr);  
+}  
