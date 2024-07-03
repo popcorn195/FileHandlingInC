@@ -1,3 +1,5 @@
+//Read the file line by line and display line numbers along with lines
+
 #include <stdio.h>
 #include <stdlib.h>
 
