@@ -1,4 +1,5 @@
 //WAC to write and read content of a file and count number of words in it.
+
 #include <stdio.h>
 #include <stdlib.h>
 
