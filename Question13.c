@@ -1,3 +1,5 @@
+//Separate vowvels and consonants in different file.
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
