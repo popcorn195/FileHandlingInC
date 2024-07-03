@@ -1,4 +1,4 @@
-// Count vowels,consonants,digits,special characters.
+//Count vowels,consonants,digits,special characters.
 
 #include <stdio.h>
 #include <stdlib.h>
